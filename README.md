@@ -1,21 +1,21 @@
 # Learning Skills
 
-This repository is a personal learning journal where I document and practice concepts related to Linux and command-line usage.
+This repository serves as my personal learning journal, documenting concepts, experiments, and practices related to programming, Linux, and other technical topics I explore.  
 
-The purpose of this repository is to keep clear notes from hands-on terminal practice and to build the habit of using Git and GitHub consistently.
+The main purpose is to keep a consistent record of my learning progress and to develop hands-on skills by experimenting, practicing, and applying concepts in real scenarios.
 
 ---
 
-## What this repository contains
+## About this repository
 
-At the moment, this repository focuses on Linux command-line usage, including:
+This repository is continuously evolving as I learn new topics. It contains my learning track across various areas, including:
 
-- Basic shell commands
-- File and directory management
-- Working with processes and ports
-- Practical command usage from daily practice
+- Linux and command-line usage
+- Programming exercises and projects
+- Problem-solving with code
+- Practical experiments and hands-on practice
 
-The content is written based on direct experimentation in the terminal.
+The content reflects my ongoing journey of exploration and understanding, serving as a central place for all my learning activities.
 
 ---
 
