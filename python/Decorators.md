@@ -19,10 +19,10 @@ Decorators **add extra functionality** to the original function **without modify
 def quality_checker(func):
     """Checks if all items are of good quality"""
     def wrapper():
-        print("🔍 Quality Checker: Checking all items quality...")
-        print("   ✅ Rice quality: Good")
-        print("   ✅ Chicken quality: Fresh")
-        print("   ✅ Spices quality: Perfect")
+        print(" Quality Checker: Checking all items quality...")
+        print("   Rice quality: Good")
+        print("   Chicken quality: Fresh")
+        print("   Spices quality: Perfect")
         
         # Call the original function
         func()
@@ -38,14 +38,14 @@ def time_checker(func):
     def wrapper():
         import time
         
-        print("\n⏰ Time Checker: Starting timer...")
+        print("\n Time Checker: Starting timer...")
         start = time.time()
         
         # Call the original function
         func()
         
         end = time.time()
-        print(f"⏰ Time Checker: Cooking took {end - start:.2f} seconds\n")
+        print(f" Time Checker: Cooking took {end - start:.2f} seconds\n")
         
     return wrapper
 
@@ -57,8 +57,8 @@ def time_checker(func):
 @quality_checker
 def cook():
     """The cook's simple job - just cook!"""
-    print("\n👨‍🍳 Cook: Cooking the biryani...")
-    print("👨‍🍳 Cook: Done! Biryani is ready!")
+    print("\n Cook: Cooking the biryani...")
+    print(" Cook: Done! Biryani is ready!")
 
 
 # ============================================
@@ -70,17 +70,17 @@ cook()
 ## Output
 
 ```
-🔍 Quality Checker: Checking all items quality...
-   ✅ Rice quality: Good
-   ✅ Chicken quality: Fresh
-   ✅ Spices quality: Perfect
+ Quality Checker: Checking all items quality...
+    Rice quality: Good
+    Chicken quality: Fresh
+    Spices quality: Perfect
 
-⏰ Time Checker: Starting timer...
+ Time Checker: Starting timer...
 
-👨‍🍳 Cook: Cooking the biryani...
-👨‍🍳 Cook: Done! Biryani is ready!
+ Cook: Cooking the biryani...
+ Cook: Done! Biryani is ready!
 
-⏰ Time Checker: Cooking took 0.00 seconds
+ Time Checker: Cooking took 0.00 seconds
 ```
 
 ## How It Works
@@ -97,11 +97,11 @@ cook()
 
 ## Key Points
 
-- ✅ Decorator = Function that wraps another function
-- ✅ Adds functionality without changing original code
-- ✅ Use `@decorator_name` syntax above the function
-- ✅ Can stack multiple decorators
-- ✅ Applied from **bottom to top** (closest decorator runs first inside)
+-  Decorator = Function that wraps another function
+-  Adds functionality without changing original code
+-  Use `@decorator_name` syntax above the function
+-  Can stack multiple decorators
+-  Applied from **bottom to top** (closest decorator runs first inside)
 
 ## Real-Life Analogy
 
@@ -115,4 +115,4 @@ The cook doesn't check quality or track time. He just cooks. The decorators hand
 
 ---
 
-**"Just like Pushpa - same person, wrapped with power!"** 🔥
+
