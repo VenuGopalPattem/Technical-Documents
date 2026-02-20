@@ -15,7 +15,7 @@ Core Concepts of OOP:
 
 ---
 
-# 1️⃣ Class
+# 1) Class
 
 ## Definition
 
@@ -118,7 +118,7 @@ obj1.display_data()
 
 ---
 
-# 2️⃣ Object
+# 2) Object
 
 ## Definition
 
@@ -141,7 +141,7 @@ The constructor `__init__` runs automatically when object is created.
 
 ---
 
-# 3️⃣ Encapsulation
+# 3) Encapsulation
 
 ## Definition
 
@@ -176,7 +176,7 @@ Direct access like `account.__balance` is not allowed.
 
 ---
 
-# 4️⃣ Abstraction
+# 4️) Abstraction
 
 ## Definition
 
@@ -211,7 +211,7 @@ Only the method `area()` is exposed to the user.
 
 ---
 
-# 5️⃣ Inheritance
+# 5) Inheritance
 
 ## Definition
 
@@ -328,7 +328,7 @@ Combination of hierarchical and multiple inheritance.
 
 ---
 
-# 6️⃣ Polymorphism
+# 6) Polymorphism
 
 ## Definition
 

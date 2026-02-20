@@ -181,7 +181,7 @@
 
 # Python Operators 
 
-## 1️⃣ Arithmetic Operators
+## 1) Arithmetic Operators
 
 | Operator | What It Does | Syntax | Example |
 |----------|-------------|--------|---------|
@@ -195,7 +195,7 @@
 
 ---
 
-## 2️⃣ Assignment Operators
+## 2) Assignment Operators
 
 | Operator | What It Does | Syntax | Example |
 |----------|-------------|--------|---------|
@@ -215,7 +215,7 @@
 
 ---
 
-## 3️⃣ Relational (Comparison) Operators
+## 3) Relational (Comparison) Operators
 
 | Operator | What It Does | Syntax | Example |
 |----------|-------------|--------|---------|
@@ -228,7 +228,7 @@
 
 ---
 
-## 4️⃣ Logical Operators
+## 4) Logical Operators
 
 | Operator | What It Does | Syntax | Example |
 |----------|-------------|--------|---------|
@@ -238,7 +238,7 @@
 
 ---
 
-## 5️⃣ Bitwise Operators
+## 5) Bitwise Operators
 
 | Operator | What It Does | Syntax | Example |
 |----------|-------------|--------|---------|
@@ -251,7 +251,7 @@
 
 ---
 
-## 6️⃣ Membership Operators
+## 6) Membership Operators
 
 | Operator | What It Does | Syntax | Example |
 |----------|-------------|--------|---------|
@@ -260,7 +260,7 @@
 
 ---
 
-## 7️⃣ Identity Operators
+## 7) Identity Operators
 
 | Operator | What It Does | Syntax | Example |
 |----------|-------------|--------|---------|
@@ -556,6 +556,114 @@ if age < 18:
 - finally always runs (even if return is used)
 - Use specific exception types for better debugging
 - assert is mainly used for debugging
+
+
+
+
+# Python Decorators
+
+## What is a Decorator?
+
+A **decorator** in Python is a function that modifies the behavior of
+another function without permanently changing its code.
+
+Decorators allow you to wrap extra functionality around an existing
+function using the `@decorator_name` syntax.
+
+------------------------------------------------------------------------
+
+## Why Use Decorators?
+
+Decorators are useful for:
+
+-   Authentication (login required)
+-   Logging
+-   Timing execution
+-   Access control
+-   Validation
+
+They help keep code **clean, reusable, and organized**.
+
+------------------------------------------------------------------------
+
+## Example: Login Required Decorator
+
+Imagine a user must be logged in to post a comment.
+
+### Step 1: Create the Decorator
+
+``` python
+def login_required(func):
+    def wrapper(user, *args, **kwargs):
+        if not user.get("is_logged_in"):
+            print("Access denied. Please log in first.")
+            return
+        return func(user, *args, **kwargs)
+    return wrapper
+```
+
+------------------------------------------------------------------------
+
+### Step 2: Use the Decorator
+
+``` python
+@login_required
+def post_comment(user, comment):
+    print(f"{user['username']} posted: {comment}")
+```
+
+------------------------------------------------------------------------
+
+### Step 3: Test It
+
+``` python
+user1 = {"username": "Alice", "is_logged_in": True}
+user2 = {"username": "Bob", "is_logged_in": False}
+
+post_comment(user1, "Hello everyone!")
+post_comment(user2, "Hi!")
+```
+
+------------------------------------------------------------------------
+
+## Output
+
+    Alice posted: Hello everyone!
+    Access denied. Please log in first.
+
+------------------------------------------------------------------------
+
+## How It Works
+
+-   `login_required` takes a function as input.
+-   It defines an inner `wrapper` function.
+-   The wrapper checks if the user is logged in.
+-   If yes → it calls the original function.
+-   If not → it blocks access.
+-   The decorator returns the wrapper function.
+
+When we use:
+
+``` python
+@login_required
+```
+
+It is equivalent to:
+
+``` python
+post_comment = login_required(post_comment)
+```
+
+------------------------------------------------------------------------
+
+## Key Takeaway
+
+A decorator:
+
+-   Wraps a function
+-   Adds extra behavior
+-   Returns a modified version of that function
+-   Keeps your main logic clean
 
 
 
@@ -1015,6 +1123,3 @@ class Demo:
 | Instance Method | Works on object data | self |
 | Class Method | Works on class data | @classmethod |
 | Static Method | Utility method | @staticmethod |
-
-
-
