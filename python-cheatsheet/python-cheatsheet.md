@@ -847,9 +847,372 @@ print(loaded_data)
 - Not secure for untrusted files (can execute malicious code).
 - Cannot pickle some objects like open file handles or database connections.
 
+---
+
+# Python Virtual Environment (venv) Guide
+
+## What is venv?
+
+`venv` (Virtual Environment) is a tool in Python that creates an isolated environment for a project.
+
+It allows you to:
+
+* Install dependencies separately for each project
+* Avoid version conflicts between projects
+* Keep your global Python installation clean
+
+Each virtual environment has its own:
+
+* Python interpreter
+* Installed packages
+* Site-packages directory
+
+---
+
+## What Does venv Do?
+
+When you create a virtual environment:
+
+* It creates a separate folder (usually named `venv`)
+* It copies or links the Python interpreter
+* It provides isolated `pip` for installing packages
+* Packages installed inside it do NOT affect other projects
+
+This helps maintain clean and reproducible projects.
+
+---
+
+## Create a Virtual Environment
+
+Run this inside your project folder:
+
+```bash
+python3 -m venv venv
+```
+
+This creates a folder named `venv` in your project directory.
+
+---
+
+## Activate the Virtual Environment
+
+### On Linux / Mac:
+
+```bash
+source venv/bin/activate
+```
+
+### On Windows (Command Prompt):
+
+```bash
+venv\Scripts\activate
+```
+
+### On Windows (PowerShell):
+
+```powershell
+venv\Scripts\Activate.ps1
+```
+
+After activation, your terminal will look like:
+
+```
+(venv) user@machine:project$
+```
+
+---
+
+## Deactivate the Virtual Environment
+
+To exit the virtual environment:
+
+```bash
+deactivate
+```
+
+Your terminal will return to normal.
+
+---
+
+## Freeze Installed Packages
+
+To save all installed packages:
+
+```bash
+pip freeze > requirements.txt
+```
+
+This creates a `requirements.txt` file that lists all dependencies.
+
+To install them later:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Summary
+
+| Action      | Command                         |
+| ----------- | ------------------------------- |
+| Create venv | `python3 -m venv venv`          |
+| Activate    | `source venv/bin/activate`      |
+| Deactivate  | `deactivate`                    |
+| Freeze      | `pip freeze > requirements.txt` |
+
+---
 
 
-## OOP (Object-Oriented Programming) in Python
+
+# Python Package Manager (pip) Guide
+
+## What is pip?
+
+`pip` stands for **Pip Installs Packages**.
+
+It is Python’s default package manager used to:
+
+* Install libraries
+* Upgrade packages
+* Remove packages
+* Manage project dependencies
+
+`pip` installs packages from the Python Package Index (PyPI).
+
+---
+
+## What Does pip Do?
+
+* Downloads Python packages
+* Installs them into your environment
+* Manages versions of libraries
+* Allows dependency tracking via `requirements.txt`
+
+When using a virtual environment, `pip` installs packages only inside that environment.
+
+---
+
+## Check pip Version
+
+```bash
+pip --version
+```
+
+or
+
+```bash
+python3 -m pip --version
+```
+
+---
+
+## Install a Package
+
+```bash
+pip install package_name
+```
+
+Example:
+
+```bash
+pip install matplotlib
+```
+
+---
+
+## Install Specific Version
+
+```bash
+pip install package_name==1.2.3
+```
+
+Example:
+
+```bash
+pip install django==4.2.0
+```
+
+---
+
+## Upgrade a Package
+
+```bash
+pip install --upgrade package_name
+```
+
+---
+
+## Uninstall a Package
+
+```bash
+pip uninstall package_name
+```
+
+---
+
+## List Installed Packages
+
+```bash
+pip list
+```
+
+---
+
+## Freeze Installed Packages
+
+Save all installed packages into a file:
+
+```bash
+pip freeze > requirements.txt
+```
+
+Install from that file:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## Summary
+
+| Action                   | Command                         |
+| ------------------------ | ------------------------------- |
+| Check version            | `pip --version`                 |
+| Install package          | `pip install package`           |
+| Install specific version | `pip install package==version`  |
+| Upgrade package          | `pip install --upgrade package` |
+| Uninstall package        | `pip uninstall package`         |
+| List installed           | `pip list`                      |
+| Freeze packages          | `pip freeze > requirements.txt` |
+
+---
+
+# PEP 8 – Quick Reference
+
+## Indentation
+
+* Use **4 spaces**
+* No tabs
+
+---
+
+## Line Length
+
+* Max **79 characters**
+* Break long lines properly
+
+---
+
+## Imports
+
+```python
+import os
+import sys
+
+from collections import defaultdict
+```
+
+* One import per line
+* Standard → third-party → local (separate with blank line)
+
+---
+
+## Naming Conventions
+
+| Type      | Style           | Example             |
+| --------- | --------------- | ------------------- |
+| Variables | `snake_case`    | `total_count`       |
+| Functions | `snake_case`    | `calculate_total()` |
+| Constants | `UPPER_CASE`    | `MAX_SIZE`          |
+| Classes   | `PascalCase`    | `MyClass`           |
+| Modules   | `snake_case.py` | `data_utils.py`     |
+
+---
+
+## Spacing
+
+### Around operators
+
+```python
+x = 10
+total = a + b
+```
+
+### After commas
+
+```python
+func(a, b, c)
+```
+
+### No extra spaces
+
+```python
+# Correct
+list_[0]
+
+# Wrong
+list_ [0]
+```
+
+---
+
+## Blank Lines
+
+* 2 blank lines before top-level function/class
+* 1 blank line between methods
+
+---
+
+## Docstrings
+
+```python
+def add(a, b):
+    """Return sum of two numbers."""
+    return a + b
+```
+
+---
+
+## Comparisons
+
+```python
+if value is None:
+if flag is True:
+```
+
+Not:
+
+```python
+if value == None
+```
+
+---
+
+## General Rules
+
+* Keep functions small
+* Avoid deep nesting
+* Use meaningful variable names
+* Avoid wildcard imports (`from x import *`)
+* Remove unused imports
+
+---
+
+## The Golden Rule
+
+> Code is read more often than it is written.
+
+---
+
+
+
+
+
+
+
+# OOP (Object-Oriented Programming) in Python
 
 ### Definition
 
@@ -858,7 +1221,7 @@ It helps organize code using real-world concepts like inheritance, encapsulation
 
 ---
 
-## 1️⃣ Class
+## 1) Class
 
 A class is a blueprint or template for creating objects.
 
@@ -878,7 +1241,7 @@ class Car:
 
 ---
 
-## 2️⃣ Object
+## 2) Object
 
 An object is an instance of a class.
 
@@ -890,7 +1253,7 @@ print(car1.brand)
 
 ---
 
-## 3️⃣ Encapsulation
+## 3) Encapsulation
 
 Encapsulation means hiding internal details and restricting direct access to variables.
 
@@ -908,7 +1271,7 @@ class Person:
 
 ---
 
-## 4️⃣ Abstraction
+## 4) Abstraction
 
 Abstraction means hiding implementation details and showing only necessary information.
 
@@ -928,7 +1291,7 @@ class Shape(ABC):
 
 ---
 
-## 5️⃣ Inheritance
+## 5) Inheritance
 
 Inheritance allows one class to inherit properties and methods from another class.
 
@@ -944,7 +1307,7 @@ class Dog(Animal):
 
 ---
 
-## 6️⃣ Polymorphism
+## 6) Polymorphism
 
 Polymorphism means one method behaves differently for different objects.
 
@@ -983,7 +1346,7 @@ It can contain variables (data members) and functions (methods).
 
 ---
 
-# 1️⃣ Instance Data Members
+# 1) Instance Data Members
 
 ### Definition
 Variables that belong to each object.
@@ -1008,7 +1371,7 @@ print(s1.name)
 
 ---
 
-# 2️⃣ Class Level Data Members (Class Variables)
+# 2) Class Level Data Members (Class Variables)
 
 ### Definition
 Variables shared by all objects of the class.
@@ -1029,7 +1392,7 @@ print(Student.school)
 
 ---
 
-# 3️⃣ Data Methods (Instance Methods)
+# 3) Data Methods (Instance Methods)
 
 ### Definition
 Methods that operate on instance variables.
@@ -1050,7 +1413,7 @@ class Student:
 
 ---
 
-# 4️⃣ Method Types in Class
+# 4) Method Types in Class
 
 ## a) Instance Method
 
