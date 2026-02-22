@@ -109,7 +109,8 @@ class PayPalPayment(PaymentMethod):
         print(f"Paid ₹{amount} using PayPal")
 ```
 
-✅ Existing code untouched
+✅ Existing code untouched <br>
+
 ✅ System extended without modification
 
 That’s Open/Closed.
@@ -161,7 +162,8 @@ Look at this line:
 def __init__(self, payment_method: PaymentMethod):
 ```
 
-`PaymentProcessor` depends on **abstraction** (`PaymentMethod`)
+`PaymentProcessor` depends on **abstraction** (`PaymentMethod`) <br>
+
 ❌ Not on concrete class like `CreditCardPayment`
 
 This makes the system flexible and loosely coupled.
@@ -174,27 +176,3 @@ What code does :
 > Each class has one responsibility.
 > High-level modules depend on abstraction, not concrete implementations.
 > This is why the system is flexible, testable, and scalable.”
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
