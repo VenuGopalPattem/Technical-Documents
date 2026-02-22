@@ -1200,12 +1200,6 @@ if value == None
 
 ---
 
-## The Golden Rule
-
-> Code is read more often than it is written.
-
----
-
 
 
 
