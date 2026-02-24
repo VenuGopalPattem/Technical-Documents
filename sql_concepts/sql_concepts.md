@@ -597,7 +597,7 @@ There are mainly 4 types of aggregations:
 
 ---
 
-# Important Aggregate Functions (Reference Table)
+# Important Aggregate Functions 
 
 | Function | What It Does   | Example Use Case    |
 | -------- | -------------- | ------------------- |
@@ -607,7 +607,6 @@ There are mainly 4 types of aggregations:
 | MIN()    | Smallest value | Lowest salary       |
 | MAX()    | Largest value  | Highest marks       |
 
-👉 These 5 are the most important and used in interviews.
 
 ---
 
@@ -1182,4 +1181,3 @@ Instead of -2000, salary becomes:
 Because trigger corrected it automatically.
 
 ---
-
