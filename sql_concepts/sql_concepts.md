@@ -262,13 +262,6 @@ If no match, NULL is returned for the left side.
 Returns all rows from both tables.
 If there is no match, NULL appears where data is missing.
 
----
-
-Good 👍 now we’ll slow down and do it properly.
-
-I will take **two small tables (6 rows each)** and show you **exactly how INNER JOIN works step-by-step**.
-
-No theory overload. Just clarity.
 
 ---
 
@@ -321,7 +314,7 @@ ON s.id = m.student_id;
 
 # Step 3: How INNER JOIN Actually Works (Mentally)
 
-Think like this 👇
+Think like this , 
 
 Database checks **each row from students**
 and tries to find a matching row in marks
@@ -944,10 +937,10 @@ Database finds "Ravi" faster.
 
 #  Important Points
 
-✔ Index improves **SELECT** speed
-❌ Index makes **INSERT, UPDATE, DELETE** slightly slower
-✔ Primary key automatically has index
-✔ Use index on columns used in:
+- Index improves **SELECT** speed
+- Index makes **INSERT, UPDATE, DELETE** slightly slower
+- Primary key automatically has index
+- Use index on columns used in:
 
 * WHERE
 * JOIN
@@ -963,8 +956,8 @@ Database finds "Ravi" faster.
 
 A **transaction** is a group of SQL statements that run as one unit.
 
-👉 Either **all statements succeed**
-👉 Or **all are cancelled**
+- Either **all statements succeed**
+- Or **all are cancelled**
 
 No partial changes.
 
