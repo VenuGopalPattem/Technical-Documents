@@ -66,3 +66,6 @@ Space outside the border. It creates distance from other elements.
 </body>
 </html>
 ```
+
+references:
+* [https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model)
